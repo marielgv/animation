@@ -1,0 +1,336 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    color: whitesmoke;
+    display: grid;
+    grid-template-areas: "aside" "search" "main" "footer";
+    grid-template-rows: 10%  15%  auto 12%;
+}
+
+aside{
+    grid-area: aside;
+    background-color: rgb(22, 8, 171);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+}
+
+ i{
+    font-size: 1rem;
+    margin-left: 1rem;  
+ }
+ menu{
+    display: flex;
+    justify-content: space-around;
+    gap:5px;
+    padding: 0.5rem;  
+    margin:0;  
+
+}
+menu a{
+    color:rgb(254, 254, 254);
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+ .fa-car{
+    animation: carIcon 0.3s linear infinite both;
+}
+@keyframes carIcon {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+.search-container{
+    grid-area: search;
+    background-color: #e8e4e4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.containerMobi{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+
+select{
+    width: 250px;
+    height: 20px;
+    border:none;
+    border-radius: 10px;
+    border-color: #fff;
+    font-size: 0.5rem;
+    background-color: rgb(22, 8, 171);
+    color: #fff;
+}
+label{
+    font-size: 0.5;
+    font-weight: bold;  
+    color: #fcfafa;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(22, 8, 171);
+}
+
+.fac{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+main{
+    grid-area: main;
+    background-color: rgb(250, 250, 247); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+.cardMobi{
+    border: 0.5px solid rgb(67, 151, 199);
+    border-radius:0.25rem;
+    margin:5px, 0;
+    height: 10rem;
+    width: 10rem;
+    color: #000;
+    font-size: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardDesk{
+    display:none;
+}
+.pagination{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 5px;
+}
+.pagination a{
+    padding: 0.5rem;
+    text-decoration: none;
+    border: 1px solid #202421;
+    border-radius: 5px;
+    background-color: rgb(232, 232, 235);
+    margin: 5px 5px;
+    justify-content: center;
+}
+.pagination a.active{
+    background-color: rgb(79, 178, 79);
+    color: white;
+}
+.cardMobi > img{
+    width: 7rem;
+}
+.cardMobi > button{
+    background-color: rgb(22, 8, 171);
+    border-radius: 3px;
+    border:none;
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    color: #fff;
+}
+.cardMobi:hover{
+  
+    animation: flip-horizontal-bottom 0.9s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@keyframes flip-horizontal-bottom {
+    0% {
+      transform: rotateX(0);
+    }
+    50% {
+      transform: rotateX(-180deg);
+    }
+    1000% {
+        transform: rotateX(0);
+      }
+  }
+
+footer{
+    grid-area:footer;
+    background-color: rgb(22, 8, 171);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* MediaQuerys */
+
+@media (width >= 576px){
+body{
+    grid-template-areas: "aside search" "aside main" "aside footer";
+    grid-template-columns: 15% auto;
+    grid-template-rows: 16% auto 10%;
+    justify-content: center;
+    background-color: #e8e4e4;
+    margin: 0;
+    padding: 0;
+}
+aside{
+    grid-area: aside;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    padding: 1.5rem;
+    margin-left: 0;
+    min-height: 100vh;
+    background-color: rgb(22, 8, 171);
+}
+.fa-car{
+    animation: carIcon 0.3s linear infinite both;
+}
+@keyframes carIcon {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+  h2{
+    color: green;
+    font-size: 2rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation: cambioColor 4s linear infinite alternate both;  
+}
+@keyframes cambioColor {
+    0% {
+      color: #acd1d7;
+    }
+    100% {
+      color: #2b15ac;
+    }
+}
+
+.bars{
+    display:none;
+
+}
+
+.cardMobi{
+    display: none;
+}
+menu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5rem;  
+    margin:0;  
+    font-size: 1em;
+}
+.fac{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 120px; 
+    font-size: 0.50rem;
+}
+.search-container{
+    color:#000;
+}
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+menu a{
+    line-height: 2rem;
+    font-size: 0.8rem;
+    margin-left: 0;
+    justify-content: start;
+    text-align: center;
+    text-decoration-line: none;
+    color:#fff;
+}
+.cardDesk{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 0.5px solid rgb(173, 173, 173);
+    border-radius:0.25rem;
+    width: 20%;
+    height: 160px;
+    color: #000;
+    font-size: 0.7rem;
+    padding: 5px;
+    margin: 5px;
+    
+}
+
+.cardDesk:hover{
+  
+    animation: flip-horizontal-bottom 0.9s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@keyframes flip-horizontal-bottom {
+    0% {
+      transform: rotateX(0);
+    }
+    50% {
+      transform: rotateX(-180deg);
+    }
+    1000% {
+        transform: rotateX(0);
+      }
+  }
+
+    .cardDesk img{
+        width: 10rem;
+        height: 7rem;
+        
+    }
+
+footer{
+    grid-area:footer;
+    background-color: rgb(22, 8, 171);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(22, 8, 171);
+    color: #fff;
+    border: none;
+}
+}
